@@ -1,0 +1,54 @@
+<template>
+  <div class="container rounded pb-2" style="background-color: #e8e9ea;">
+    <h4>Komponenta 8</h4>
+    <p>Vsebina praznih HTML elementov:</p>
+
+    <div class="form-group">
+      <label for="inputField">Vnosno polje:</label><br>
+      <input type="text" name="inputField" id="inputField" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="selectField">Izbira vrednosti</label>
+      <select class="form-control" name="selectField" id="selectField">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="textField">Besedilno polje</label>
+      <textarea class="form-control" rows="3" name="textField" id="textField"></textarea>
+    </div>
+    <div class="form-group">
+      <input class="form-check-input" type="checkbox" value="" id="checkField" name="checkField">
+      <label class="form-check-label" for="checkField">
+        Potrditveno okno
+      </label>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="option1" checked name="radioField" id="option1">
+        <label class="form-check-label" for="option1">
+          Izbirno okno 1
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="option2" name="radioField" id="option2">
+        <label class="form-check-label" for="option2">
+          Izbirno okno 2
+        </label>
+      </div>
+    </div>
+    <div class="form-group"><button class="btn btn-secondary">Nek Gumb</button></div>
+  </div>
+
+</template>
+
+<script>
+export default {
+  name: 'StaticEight',
+}
+</script>
+

@@ -5,10 +5,8 @@
     <img src="../../assets/aplikacija_drevesna_struktura.jpg" alt="Drevesna struktura">
     <div class="row">
       <div class="col-md-12 col-lg-5 pb-3">
-        <StaticTwo></StaticTwo>
       </div>
       <div class="col-md-12 col-lg-7">
-        <StaticFive></StaticFive>
       </div>
     </div>
   </div>
@@ -16,11 +14,11 @@
 </template>
 
 <script>
-import StaticTwo from "./StaticTwo";
-import StaticFive from "./StaticFive";
+
+
+
 export default {
-  name: 'Content',
-  components: {StaticFive, StaticTwo},
+  name: 'Dynamic',
 }
 </script>
 

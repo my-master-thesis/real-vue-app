@@ -37,10 +37,14 @@ import VueRouter from 'vue-router'
 import './App.css'
 import Home from "./components/Home";
 import Content from "./components/content/Content";
+import Dynamic from "./components/dynamic/Dynamic";
+import BoundaryCases from "./components/boundary-cases/BoundaryCases";
 
 const routes = [
   { path: '/home', component: Home, name: 'home' },
+  { path: '/boundary', component: BoundaryCases },
   { path: '/content', component: Content },
+  { path: '/dynamic', component: Dynamic },
   { path: '*', redirect: { name: 'home' }},
 ]
 
