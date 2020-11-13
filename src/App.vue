@@ -39,9 +39,13 @@ import Home from "./components/Home";
 import Content from "./components/content/Content";
 import Dynamic from "./components/dynamic/Dynamic";
 import BoundaryCases from "./components/boundary-cases/BoundaryCases";
+import Contacts from "./components/contacts/Contacts";
+import ContactsDetail from "./components/contacts/ContactsDetail";
 
 const routes = [
   { path: '/home', component: Home, name: 'home' },
+  { path: '/contacts', component: Contacts },
+  { path: '/contacts/:id', component: ContactsDetail },
   { path: '/boundary', component: BoundaryCases },
   { path: '/content', component: Content },
   { path: '/dynamic', component: Dynamic },
@@ -66,12 +70,12 @@ export default {
       currentRoute: window.location.pathname,
       showToolbar: true,
       sideMenuItems: [
-        { link: 'home', text: 'Naslovnica' },
-        { link: 'contacts', text: 'Kontakti' },
-        { link: 'tasks', text: 'Naloge' },
-        { link: 'boundary', text: 'Test nastavljanja vrednosti' },
-        { link: 'content', text: 'Statična vsebina' },
-        { link: 'dynamic', text: 'Dinamična vsebina' },
+        { link: '/home', text: 'Naslovnica' },
+        { link: '/contacts', text: 'Kontakti' },
+        { link: '/tasks', text: 'Naloge' },
+        { link: '/boundary', text: 'Test nastavljanja vrednosti' },
+        { link: '/content', text: 'Statična vsebina' },
+        { link: '/dynamic', text: 'Dinamična vsebina' },
       ]
     }
   },
