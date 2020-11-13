@@ -1,15 +1,31 @@
 <template>
   <div class="container-fluid">
     <h1 class="mt-4">O strani</h1>
-    <p>Ta stran vsebuje 8 statičnih komponent z drevesno strukturo prikazano na spodnji sliki. Ta vsebina se nahaja na komponenti 1. Stran je namenjena testiranju zahtevnosti uporabe več komponent s statično vsebino direktno v HTML kodi.</p>
+    <p>Ta stran vsebuje 8 dinamičnih komponent, ki imajo podatke vključene s pomočjo doseganja spremenljivk in z drevesno strukturo prikazano na spodnji sliki. Ta vsebina se nahaja na komponenti 1. Stran je namenjena primerjavi s stranjo Statična vsebina.</p>
+    <p>Ta komponenta vsebuje tudi potrditvena polja s katerimi se lahko odstrani in nato spet vrne določeno komponento.</p>
     <img src="../../assets/aplikacija_drevesna_struktura.jpg" alt="Drevesna struktura">
     <div class="row">
       <div class="col-md-12 col-lg-5 pb-3">
+        <div class="form-check">
+          <input v-model="showTwo" class="form-check-input" type="checkbox" value="Potrjen" id="showTwo" name="showTwo">
+          <label class="form-check-label" for="showTwo">
+            Prikaži komponento 2
+          </label>
+        </div>
+        <DynamicTwo v-if="showTwo"></DynamicTwo>
       </div>
       <div class="col-md-12 col-lg-7">
+        <div class="form-check">
+          <input v-model="showFive" class="form-check-input" type="checkbox" value="Potrjen" id="showFive" name="showFive">
+          <label class="form-check-label" for="showFive">
+            Prikaži komponento 5
+          </label>
+        </div>
+        <DynamicFive v-if="showFive"></DynamicFive>
       </div>
     </div>
   </div>
+
 
 </template>
 
@@ -17,8 +33,17 @@
 
 
 
+import DynamicFive from "./DynamicFive";
+import DynamicTwo from "./DynamicTwo";
 export default {
   name: 'Dynamic',
+  components: {DynamicTwo, DynamicFive},
+  data() {
+    return {
+      showTwo: true,
+      showFive: true,
+    }
+  }
 }
 </script>
 
