@@ -1,28 +1,76 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showToolbar }">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading" title="Magistrski demonstartiven primer">MDP</div>
+      <div class="list-group list-group-flush">
+        <router-link
+                v-for="item in sideMenuItems" :key="item.link"
+                class="list-group-item list-group-item-action"
+                :to="{path: item.link}"
+                >{{ item.text }}</router-link>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-light bg-light border-bottom">
+        <button class="navbar-toggler" v-on:click="toggleMenu"><span class="navbar-toggler-icon"></span></button>
+      </nav>
+
+      <div class="container-fluid">
+        <router-view></router-view>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
   </div>
+  <!-- /#wrapper -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import VueRouter from 'vue-router'
+import './App.css'
+import Home from "./components/Home";
+import Content from "./components/content/Content";
+
+const routes = [
+  { path: '/home', component: Home, name: 'home' },
+  { path: '/content', component: Content },
+  { path: '*', redirect: { name: 'home' }},
+]
+
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+  },
+  methods: {
+    toggleMenu: function () {
+      this.showToolbar = !this.showToolbar;
+    }
+  },
+  data() {
+    return {
+      currentRoute: window.location.pathname,
+      showToolbar: true,
+      sideMenuItems: [
+        { link: 'home', text: 'Naslovnica' },
+        { link: 'contacts', text: 'Kontakti' },
+        { link: 'tasks', text: 'Naloge' },
+        { link: 'boundary', text: 'Test nastavljanja vrednosti' },
+        { link: 'content', text: 'Statična vsebina' },
+        { link: 'dynamic', text: 'Dinamična vsebina' },
+      ]
+    }
+  },
+  router: router
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

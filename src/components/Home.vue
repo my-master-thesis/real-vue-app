@@ -1,0 +1,26 @@
+<template>
+  <div class="container-fluid">
+    <h1 class="mt-4">O izdelku</h1>
+    <p>Izdelali smo 5 medsebojno skoraj identičnih spletnih aplikacij. Vse imajo enako postavitev strani (izgled), enake funkcionalnosti in enak namen. Razlikujejo se le v izgradnji, saj so narejena z različnimi ogrodji in z različnimi načini zaznavanja sprememb.</p>
+    <p>Obstajajo naslednje različice:</p>
+    <ul>
+      <li><b>Angular</b> s privzetim načinom zaznavanja sprememb</li>
+      <li><b>Angular</b> z <code>OnPush</code> načinom zaznavanja sprememb</li>
+      <li><b>React</b></li>
+      <li><b>Vue</b></li>
+      <li><b>Angular</b> z uporabo reaktivnega načina zaznavanja sprememb (uporablja našo nadgradnjo ogrodja)</li>
+    </ul>
+    <p>
+      Na vsaki od podstrani v levem meniju je podrobneje razloženo čemu je testna stran namenjena.
+      Aplikacija zadržuje notranje stanje, tako da se podatki ob prehodih med stranmi ne izgubijo.
+      Se pa stran resitira ob ponovnem nalaganju in osveževanju.
+    </p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Home',
+}
+</script>
+
