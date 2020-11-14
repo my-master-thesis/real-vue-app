@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label v-if="label">{{ label }}: {{ value }}</label>
+    <label v-if="label">{{ label }}:</label>
     <input
             v-bind:placeholder="placeholder"
             :value="value"

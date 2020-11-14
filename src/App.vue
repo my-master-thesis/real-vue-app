@@ -41,11 +41,13 @@ import Dynamic from "./components/dynamic/Dynamic";
 import BoundaryCases from "./components/boundary-cases/BoundaryCases";
 import Contacts from "./components/contacts/Contacts";
 import ContactsDetail from "./components/contacts/ContactsDetail";
+import Tasks from "./components/tasks/Tasks";
 
 const routes = [
   { path: '/home', component: Home, name: 'home' },
   { path: '/contacts', component: Contacts },
   { path: '/contacts/:id', component: ContactsDetail },
+  { path: '/tasks', component: Tasks },
   { path: '/boundary', component: BoundaryCases },
   { path: '/content', component: Content },
   { path: '/dynamic', component: Dynamic },

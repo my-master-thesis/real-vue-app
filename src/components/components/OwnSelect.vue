@@ -21,7 +21,7 @@ export default {
   props: ['label', 'placeholder', 'value', 'items', 'bindValue', 'bindLabel', 'bindLabelSecond'],
   methods: {
     handleChange(e) {
-      this.$emit('input', e.target.value);
+      this.$emit('input', Number(e.target.value));
     }
   }
 }
