@@ -256,3 +256,15 @@ export const contactsStore = {
     localStorage.setItem('contacts-store', JSON.stringify(this.state.initialData));
   }
 }
+try {
+  let storageData = localStorage.getItem('contacts-store');
+  if (storageData) {
+    storageData = JSON.parse(storageData);
+    if (Array.isArray(storageData)) {
+      contactsStore.state.initialData = storageData;
+    }
+  }
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.error(e);
+}

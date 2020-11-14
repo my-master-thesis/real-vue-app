@@ -82,3 +82,21 @@ export const tasksStore = {
     localStorage.setItem('tasks-store', JSON.stringify(this.state.initialData));
   }
 }
+try {
+  let storageData = localStorage.getItem('tasks-store');
+  if (storageData) {
+    storageData = JSON.parse(storageData);
+    if (Array.isArray(storageData)) {
+      storageData.forEach((item) => {
+        if (item.startDate) {
+          item.startDate = new Date(item.startDate);
+        }
+      });
+      tasksStore.state.initialData = storageData;
+      tasksStore.state.lastId = Math.max(...storageData.map(item => item.id));
+    }
+  }
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.error(e);
+}

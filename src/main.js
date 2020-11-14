@@ -10,6 +10,12 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 Vue.use(VueRx)
+Vue.filter('filter', function (items, pageIndex, pageSize = 10) {
+  if (!items || typeof pageIndex !== 'number' || pageIndex < 0) {
+    return items;
+  }
+  return items.slice((pageIndex) * pageSize, (pageIndex + 1) * pageSize);
+})
 
 new Vue({
   render: h => h(App),

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row mr-md-n3 mr-0">
-            <div v-for="contact in contacts" :key="contact.id" class="col-lg-4 col-md-6 mb-3">
+            <div v-for="contact in $options.filters.filter(contacts, pageIndex, pageSize)" :key="contact.id" class="col-lg-4 col-md-6 mb-3">
                 <ContactsCard
                         :contact="contact"
                         @favoriteChange="$emit('favoriteChange', $event)"

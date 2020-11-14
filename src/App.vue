@@ -42,6 +42,8 @@ import BoundaryCases from "./components/boundary-cases/BoundaryCases";
 import Contacts from "./components/contacts/Contacts";
 import ContactsDetail from "./components/contacts/ContactsDetail";
 import Tasks from "./components/tasks/Tasks";
+import {contactsStore} from "./components/contacts/ContactsStore";
+import {tasksStore} from "./components/tasks/TasksStore";
 
 const routes = [
   { path: '/home', component: Home, name: 'home' },
@@ -62,9 +64,16 @@ export default {
   name: 'app',
   components: {
   },
+  created() {
+    window.addEventListener('beforeunload', this.saveData)
+  },
   methods: {
     toggleMenu: function () {
       this.showToolbar = !this.showToolbar;
+    },
+    saveData: function () {
+      contactsStore.saveToStorage();
+      tasksStore.saveToStorage();
     }
   },
   data() {

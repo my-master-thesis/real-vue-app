@@ -20,7 +20,7 @@
       </thead>
       <tbody>
       <tr
-              v-for="task in tasks"
+              v-for="task in $options.filters.filter(tasks, pageIndex, pageSize)"
               :key="task.id"
               is="TasksTableItem"
               :task="task"

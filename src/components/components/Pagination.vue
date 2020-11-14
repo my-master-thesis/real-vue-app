@@ -28,7 +28,7 @@
             </nav>
         </div>
         <div class="col-3 col-sm-2">
-            <select class="form-control" :value="pageSizeValue" @handleChange="calculateMaxPages(true)">
+            <select class="form-control" v-model="pageSizeValue" @change="calculateMaxPages(true)">
                 <option v-for="option in pageSizeOptions" :key="option" :value="option">{{ option }}</option>
             </select>
         </div>
@@ -42,11 +42,18 @@
     props: ['length', 'pageSize', 'pageSizeOptions'],
     watch: {
       length: function () {
+        this.allRecords = this.length;
         this.calculateMaxPages();
       },
       pageSize: function () {
+        this.pageSizeValue = this.pageSize;
         this.calculateMaxPages();
       }
+    },
+    mounted() {
+      this.allRecords = this.length;
+      this.pageSizeValue = this.pageSize;
+      this.calculateMaxPages();
     },
     data() {
       return {
