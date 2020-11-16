@@ -117,7 +117,7 @@
         const tmp = Date.now();
         for (let i = 0; i < 1000; i++) {
           setTimeout(() => {
-            this.counter++;
+            this.counterC++;
           }, 1);
         }
         this.resultsClickTimeout = Date.now() - tmp;
@@ -132,7 +132,7 @@
         }
         if (nr > 0) {
           setTimeout(() => {
-            this.counter++;
+            this.counterC++;
             this.clickRecursiveTimeout(nr - 1);
           }, 1);
         } else {
