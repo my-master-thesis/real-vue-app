@@ -1,10 +1,10 @@
 <template>
-    <div class="row">
+    <div class="row pagination-row">
         <div class="col-9 col-sm-10">
             <nav>
                 <ul class="pagination">
                     <li v-if="selectedPage > 0" class="page-item">
-                        <button v-on:click="changePage(-1)" class="page-link">Nazaj</button>
+                        <button v-on:click="changePage(-1)" class="page-link previous-page">Nazaj</button>
                     </li>
                     <li v-if="selectedPage > 0" class="page-item">
                         <button v-on:click="setPage(0)" class="page-link">1</button>
@@ -22,7 +22,7 @@
                         <button v-on:click="setPage(maxPages)" class="page-link active">{{ maxPages + 1 }}</button>
                     </li>
                     <li v-if="selectedPage < maxPages" class="page-item">
-                        <button v-on:click="changePage(1)" class="page-link">Naprej</button>
+                        <button v-on:click="changePage(1)" class="page-link next-page">Naprej</button>
                     </li>
                 </ul>
             </nav>

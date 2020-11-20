@@ -4,6 +4,7 @@
     <input
             v-bind:placeholder="placeholder"
             :value="value"
+            :name="name"
             @input="handleChange"
             type="text"
             class="form-control"
@@ -15,7 +16,7 @@
 <script>
 export default {
   name: 'Input',
-  props: ['label', 'placeholder', 'value'],
+  props: ['label', 'placeholder', 'value', 'name'],
   methods: {
     handleChange(e) {
       this.$emit('input', e.target.value);

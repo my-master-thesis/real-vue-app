@@ -1,8 +1,8 @@
 <template>
     <tr>
         <td scope="row">{{ task.id }}</td>
-        <td><Input v-model="task.title"/></td>
-        <td><Input v-model="task.description"/></td>
+        <td><Input v-model="task.title" name="opravilo"/></td>
+        <td><Input v-model="task.description" name="opis"/></td>
         <td>
             {{ printDuration(task.duration) }}
             <button v-if="task.startDate" v-on:click="stopTimer()" class="btn btn-danger">Stop</button>

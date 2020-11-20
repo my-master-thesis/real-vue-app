@@ -7,7 +7,7 @@
             dodajamo med priljubljene. Na dnu je tudi paginacija, ki služi nadzoru nad tem koliko podatkov želimo
             prikazovati na enkrat.</p>
         <transition name="fade">
-            <div v-if="this.favorites.length" class="container">
+            <div v-if="this.favorites.length" id="favorite-contacts" class="container">
                 <h2>Priljubljeni kontakti</h2>
                 <ContactsGrid
                         :contacts="favorites"
@@ -17,7 +17,7 @@
                 ></ContactsGrid>
             </div>
         </transition>
-        <div class="container">
+        <div class="container" id="all-contacts">
             <div class="row">
                 <div class="col-10">
                     <h2>Vsi kontakti</h2>
