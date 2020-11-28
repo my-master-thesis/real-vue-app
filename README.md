@@ -1,24 +1,13 @@
-# vue-project
+# Vue app
 
-## Project setup
-```
-npm install
-```
+## Get started
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Run `npm install` to install dependencies.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Development server
 
-### Lints and fixes files
-```
-npm run lint
-```
+Run `npm start` for a dev server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Build
+
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
